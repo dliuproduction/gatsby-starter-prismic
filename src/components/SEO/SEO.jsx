@@ -131,7 +131,7 @@ SEO.defaultProps = {
 const query = graphql`
   query SEO {
     site {
-      buildTime(formatString: "DD.MM.YYYY")
+      buildTime(formatString: "YYYY-MM-DD")
       siteMetadata {
         defaultTitle: title
         titleAlt
