@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'react-emotion';
 import { Layout, Listing, Wrapper, Title, SEO, Header } from 'components';
+import { prism } from 'styles';
 import Categories from '../components/Listing/Categories';
 import website from '../../config/website';
 
@@ -24,6 +25,7 @@ const Headline = styled.p`
 `;
 
 const Content = styled.div`
+  ${prism};
   padding: 6rem 0;
   p,
   li {
