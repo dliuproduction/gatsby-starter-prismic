@@ -33,6 +33,7 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "typeface-lora": "^0.0.54",
+    "typeface-source-sans-pro": "^0.0.54",
     "typography": "^0.16.17"
   },
   "devDependencies": {

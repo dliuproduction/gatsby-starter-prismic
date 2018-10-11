@@ -18,6 +18,7 @@ const typography = new Typography({
     'Segoe UI Symbol',
   ],
   bodyFontFamily: [
+    'Lora',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
@@ -29,7 +30,7 @@ const typography = new Typography({
     'Segoe UI Emoji',
     'Segoe UI Symbol',
   ],
-  scaleRatio: 3.998,
+  scaleRatio: 3.157,
   headerWeight: 700,
   overrideStyles: () => ({
     img: {

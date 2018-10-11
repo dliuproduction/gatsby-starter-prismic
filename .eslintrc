@@ -9,6 +9,13 @@
       "classes": true
     }
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
   "env": {
     "browser": true,
     "node": true,
@@ -33,6 +40,7 @@
     "no-use-before-define": 0,
     "import/no-extraneous-dependencies": 0,
     "react/no-danger": 0,
+    "react/prefer-stateless-function": 0,
     "import/prefer-default-export": 0,
     "import": 0,
     "func-names": 0,

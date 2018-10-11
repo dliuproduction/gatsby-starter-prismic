@@ -1,15 +1,38 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-const config = require('./config/website');
-
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+const {
+  _pathPrefix,
+  shortName,
+  description,
+  themeColor,
+  backgroundColor,
+  _title,
+  _titleAlt,
+  _url,
+  author,
+  logo,
+  favicon,
+  siteLanguage,
+  twitter,
+} = require('./config/website');
 
 module.exports = {
   /* General Information */
-  pathPrefix: config.pathPrefix,
+  pathPrefix: _pathPrefix,
   siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
+    title: _title,
+    titleAlt: _titleAlt,
+    shortName,
+    author,
+    siteLanguage,
+    logo, // Logo for JSONLD
+    url: _url,
+    siteUrl: _url + _pathPrefix, // For gatsby-plugin-sitemap
+    pathPrefix: _pathPrefix,
+    description,
+    banner: logo,
+    twitter,
   },
   /* Plugins */
   plugins: [
@@ -37,14 +60,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleAlt,
-        description: config.siteDescription,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
+        name: _title,
+        short_name: _titleAlt,
+        description,
+        start_url: _pathPrefix,
+        background_color: backgroundColor,
+        theme_color: themeColor,
         display: 'standalone',
-        icon: 'src/favicon.png',
+        icon: favicon,
       },
     },
     /* Must be placed at the end */
