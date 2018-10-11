@@ -61,7 +61,7 @@ module.exports = {
       options: {
         repositoryName: 'gatsby-starter-prismic',
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        linkResolver: () => post => `/${post.uid}`,
         htmlSerializer: () => (type, element, content) => {
           switch (type) {
             case Elements.label: {

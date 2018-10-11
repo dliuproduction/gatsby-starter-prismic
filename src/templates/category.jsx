@@ -52,6 +52,19 @@ const Category = ({
 
 export default Category;
 
+Category.propTypes = {
+  pageContext: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+  data: PropTypes.shape({
+    posts: PropTypes.shape({
+      edges: PropTypes.array.isRequired,
+      totalCount: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+  location: PropTypes.object.isRequired,
+};
+
 export const pageQuery = graphql`
   query CategoryPage {
     posts: allPrismicPost(sort: { fields: [data___date], order: DESC }) {

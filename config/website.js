@@ -3,7 +3,7 @@ module.exports = {
   _title: 'Gatsby Starter - Prismic.io', // Navigation and Site Title
   _titleAlt: 'Prismic Starter', // Title for JSONLD
   description: 'A bright single-page portfolio starter with big typography & images for Gatsby.',
-  _url: 'https://gatsby-starter-prismicio.netlify.com', // Domain of your site. No trailing slash!
+  _url: 'https://gatsby-starter-prismic.netlify.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   logo: '/logos/logo-1024.png', // Used for SEO
 
