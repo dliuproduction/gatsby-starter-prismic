@@ -24,6 +24,9 @@ const StyledLink = styled(Link)`
   font-size: 2.369rem;
   color: ${props => props.theme.colors.black};
   font-style: normal;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    font-size: 1.777rem;
+  }
 `;
 
 export default class ListItem extends Component {

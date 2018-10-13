@@ -6,14 +6,27 @@ import { Layout, Listing, Wrapper, Title } from 'components';
 
 const Hero = styled.header`
   background-color: ${props => props.theme.colors.greyLight};
-  height: 1000px;
   display: flex;
   align-items: center;
 `;
 
 const HeroInner = styled(Wrapper)`
+  padding-top: 13rem;
+  padding-bottom: 13rem;
   h1 {
     margin-bottom: 2rem;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 `;
 
@@ -21,6 +34,12 @@ const HeroText = styled.div`
   font-size: 1.7rem;
   line-height: 1.4;
   margin-bottom: 2rem;
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    font-size: 1.25rem;
+  }
 `;
 
 const Social = styled.ul`
@@ -34,6 +53,9 @@ const Social = styled.ul`
     display: inline;
     &:not(:first-child) {
       margin-left: 2.5rem;
+      @media (max-width: ${props => props.theme.breakpoints.s}) {
+        margin-left: 1.75rem;
+      }
     }
     a {
       font-style: normal;
@@ -44,6 +66,9 @@ const Social = styled.ul`
       &:focus {
         color: ${props => props.theme.colors.primary};
         text-decoration: none;
+      }
+      @media (max-width: ${props => props.theme.breakpoints.s}) {
+        font-size: 1.2rem;
       }
     }
   }
@@ -59,6 +84,9 @@ const ProjectListing = styled.ul`
       font-size: 2.369rem;
       font-style: normal;
       color: ${props => props.theme.colors.black};
+      @media (max-width: ${props => props.theme.breakpoints.s}) {
+        font-size: 1.777rem;
+      }
     }
   }
 `;
