@@ -95,6 +95,15 @@ module.exports = {
     },
     'gatsby-plugin-lodash',
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`,
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'config/typography.js',

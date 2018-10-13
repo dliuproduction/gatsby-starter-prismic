@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'react-emotion';
-import { Layout, Listing, Wrapper, Title, SEO, Header } from 'components';
-import { prism } from 'styles';
+import { Layout, Listing, Wrapper, SliceZone, Title, SEO, Header } from 'components';
 import Categories from '../components/Listing/Categories';
 import website from '../../config/website';
 
@@ -21,36 +20,6 @@ const Headline = styled.p`
   a {
     font-style: normal;
     font-weight: normal;
-  }
-`;
-
-const Content = styled.div`
-  ${prism};
-  padding: 6rem 0;
-  p,
-  li {
-    letter-spacing: -0.003em;
-    --baseline-multiplier: 0.179;
-    --x-height-multiplier: 0.35;
-    font-size: 21px;
-    line-height: 1.58;
-    code {
-      padding: 0.2rem 0.5rem;
-      margin: 0.5rem 0;
-    }
-  }
-  p,
-  ul,
-  ol,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  pre,
-  blockquote {
-    max-width: 720px;
   }
 `;
 
@@ -73,7 +42,7 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
         </Wrapper>
       </Hero>
       <Wrapper>
-        <Content dangerouslySetInnerHTML={{ __html: data.content.html }} />
+        <SliceZone allSlices={data.body} />
         <Title style={{ marginTop: '4rem' }}>Recent posts</Title>
         <Listing posts={posts.edges} />
       </Wrapper>
@@ -108,8 +77,41 @@ export const pageQuery = graphql`
             }
           }
         }
-        content {
-          html
+        body {
+          __typename
+          ... on PrismicPostBodyText {
+            slice_type
+            id
+            primary {
+              text {
+                html
+              }
+            }
+          }
+          ... on PrismicPostBodyCodeBlock {
+            slice_type
+            id
+            primary {
+              code_block {
+                html
+              }
+            }
+          }
+          ... on PrismicPostBodyImage {
+            slice_type
+            id
+            primary {
+              image {
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 1200, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
