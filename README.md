@@ -10,7 +10,7 @@ A typography-heavy & light-themed Gatsby Starter which uses the Headless CMS [Pr
 
 I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
 
-Also check out the other *gatsby-starters*:
+Also check out the other _gatsby-starters_:
 
 - [gatsby-starter-portfolio-emma](https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
 - [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
@@ -24,7 +24,7 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 
 Multiple features of Prismic are used in this starter:
 
-- **Slices**: Enrich your blogposts with custom quotes, images or codeblocks. You can order them how you like. When you used the *Image-Slice* the image will get inserted and optimized by **gatsby-image**
+- **Slices**: Enrich your blogposts with custom quotes, images or codeblocks. You can order them how you like. When you used the _Image-Slice_ the image will get inserted and optimized by **gatsby-image**
 - **Labels**: When marking a single word or a whole block with the given labels, Prism.js will transform these to syntax-highlighted codeblocks
 - **Relationship fields**: Categorize your blogposts in Categories via a relationship field. You can change categories on the fly
 - **Both custom types (Single / Repeatable)**: (Nearly) Every aspect of the website is managed with Prismic. The social media links or the recent projects get both managed in Prismic, no hardcoded entries!
@@ -34,27 +34,28 @@ Therefore the starter has following features:
 - Prismic as Headless CMS
 - Emotion for styling
 - PrismJS highlighting
-- Responsive images (gatsby-images)
-    - The right image size for every screen size
-    - Traced SVG Loading (Lazy-Loading)
-    - WebP Support
+- Responsive images (gatsby-image)
+  - The right image size for every screen size
+  - Traced SVG Loading (Lazy-Loading)
+  - WebP Support
 - SEO
-    - Sitemap
-    - Schema.org JSONLD
-    - OpenGraph Tags
-    - Twitter Tags
-    - Favicons
+  - Sitemap
+  - Schema.org JSONLD
+  - OpenGraph Tags
+  - Twitter Tags
+  - Favicons
 - Offline Support
 - WebApp Manifest Support
 - Typography.js
 - Absolute modules imports
 - Configurable
-    - Use the `website.js` to easily change the most important information
-    - Themeable with `theme.js`
+  - Use the `website.js` to easily change the most important information
+  - Themeable with `theme.js`
 
 ## Getting Started
 
 Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
+
 - [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
 - [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
 
@@ -79,7 +80,7 @@ If you want to use the exact same custom types and only want to get up and runni
 Follow the second and third step (with the respective file from `.prismic`) for the following types:
 
 | Name       | API ID     | Type       |
-|------------|------------|------------|
+| ---------- | ---------- | ---------- |
 | Category   | category   | Repeatable |
 | Hero Links | hero_links | Single     |
 | Homepage   | homepage   | Single     |
@@ -114,18 +115,19 @@ npm run dev
 
 ### Adding new features/plugins
 
-You can add other features by having a look at the offical [plugins page](https://www.gatsbyjs.org/docs/plugins/)
+You can add other features by having a look at the offical [plugins page](https://www.gatsbyjs.org/plugins/)
 
 ### Building your site
 
 ```
 npm run build
 ```
-Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
+
+Copy the content of the `public` folder to your webhost or use a website like Netlify which automates that for you.
 
 ## Configuration
 
-You can configure your setup in ``config/website``:
+You can configure your setup in `config/website`:
 
 ```JS
 module.exports = {
@@ -148,7 +150,7 @@ module.exports = {
 };
 ```
 
-You can also change the colors, container widths and other stuff in ``src/styles/theme``:
+You can also change the colors, container widths and other stuff in `src/styles/theme`:
 
 ```JS
 const theme = {
@@ -174,4 +176,4 @@ const theme = {
 export default theme;
 ```
 
-**Attention:** You also need to edit ``static/robots.txt`` to include your domain!
+**Attention:** You also need to edit `static/robots.txt` to include your domain!

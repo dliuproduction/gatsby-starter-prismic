@@ -8,8 +8,10 @@
     "dev": "gatsby develop -o",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
-    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore"
+    "lint": "yarn run lint:md && yarn run lint:js:fix",
+    "lint:js": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "lint:js:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
+    "lint:md": "prettier --write *.md"
   },
   "dependencies": {
     "emotion": "^9.2.12",
