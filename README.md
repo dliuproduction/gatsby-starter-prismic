@@ -110,8 +110,8 @@ Prismic gives you the tool called **Label** in the Rich Text field. You can wrap
 
 The two usecases:
 
-- You mark a single word / sentence and apply a label: Inline code (single backtick in markdown)
-- You choose the `Preformatted` block (where can also choose the Headings) and apply the label: Code block (three backticks in markdown)
+- You mark a single word / sentence and apply the `text` label: Inline code (single backtick in markdown)
+- You choose the `Preformatted` block (where can also choose the Headings) and apply any other (except `text`) label: Code block (three backticks in markdown)
 
 ### Slices
 
