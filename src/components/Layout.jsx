@@ -69,7 +69,9 @@ const PureLayout = ({ children, data }) => (
     <>
       <SEO />
       {children}
-      <Footer>{data.prismicHomepage.data.footer.text}</Footer>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: data.prismicHomepage.data.footer.html }} />
+      </Footer>
     </>
   </ThemeProvider>
 );
@@ -83,7 +85,7 @@ class Layout extends Component {
             prismicHomepage {
               data {
                 footer {
-                  text
+                  html
                 }
               }
             }
