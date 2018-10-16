@@ -63,6 +63,7 @@ To copy and install this starter run this command (with "project-name" being the
 
 ```bash
 gatsby new project-name https://github.com/LeKoArts/gatsby-starter-prismic
+cd project-name
 ```
 
 ## Prismic
@@ -103,7 +104,25 @@ If you deploy to Netlify you can also setup an environment variable.
 
 More information on the source plugin: [gatsby-source-prismic](https://github.com/angeloashmore/gatsby-source-prismic)
 
-### Development
+### Labels
+
+Prismic gives you the tool called **Label** in the Rich Text field. You can wrap single words or complete text blocks with a label (they will have a yellow background when labeled). Normally this is just a `<span>` with a name, but the `gatsby-config.js` converts these marked words/blocks into code blocks with PrismJS classnames (and therefore syntax highlighting 🎉).
+
+The two usecases:
+
+- You mark a single word / sentence and apply a label: Inline code (single backtick in markdown)
+- You choose the `Preformatted` block (where can also choose the Headings) and apply the label: Code block (three backticks in markdown)
+
+### Slices
+
+The `Post` custom types offers four slices in the slice zone:
+
+- **Code Block**: This slice automatically inserts a `Preformatted` field in which you can paste your code. Before inserting you should choose a **Label** for the correct syntax highlighting
+- **Quote**: A quote in a `blockquote`
+- **Text**: Your normal _Rich Text_ field
+- **Image**: This image won't be inlined with a Prismic URL, but downloaded and processed with `gatsby-image`
+
+## Development
 
 Before running the local development server you'll need to add Content to your Prismic site! Go to your documents (`https://your-name.prismic.io/documents/`) and create content with the newly created types. Fill out the `Homepage`, `Hero Links`, and `Projects` single type. Create some categories and add at least one Post. **Please note**: You have to publish all these documents (not only saving them)!
 
