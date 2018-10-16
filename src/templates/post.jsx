@@ -59,6 +59,9 @@ Post.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
+// The typenames come from the slice names
+// If this doesn't work for you query for __typename in body {} and GraphiQL will show them to you
+
 export const pageQuery = graphql`
   query PostBySlug($uid: String!) {
     prismicPost(uid: { eq: $uid }) {
@@ -78,7 +81,6 @@ export const pageQuery = graphql`
           }
         }
         body {
-          __typename
           ... on PrismicPostBodyText {
             slice_type
             id

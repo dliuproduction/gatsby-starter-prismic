@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { Facebook, Twitter } from 'components/SEO';
 
+// Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
+
 export default class SEO extends Component {
   render() {
     const { title, desc, banner, pathname, article } = this.props;

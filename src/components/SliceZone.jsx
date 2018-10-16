@@ -26,6 +26,7 @@ export default class SliceZone extends Component {
     const { allSlices } = this.props;
     const slice = allSlices.map(s => {
       switch (s.slice_type) {
+        // These are the API IDs of the slices
         case 'text':
           return <BodyText key={s.id} input={s} />;
         case 'code_block':
