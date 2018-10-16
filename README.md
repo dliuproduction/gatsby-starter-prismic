@@ -4,7 +4,7 @@ A typography-heavy & light-themed Gatsby Starter which uses the Headless CMS [Pr
 
 [Demo Website](https://gatsby-starter-prismic.netlify.com/)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-prismic)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-prismic)
 
 ## About Me
 
@@ -12,11 +12,11 @@ I hope you like my starters and create something awesome! To see some of my work
 
 Also check out the other _gatsby-starters_:
 
-- [gatsby-starter-portfolio-emma](https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
-- [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
-- [gatsby-starter-portfolio-bella](https://github.com/LeKoArts/gatsby-starter-portfolio-bella)
-- [gatsby-starter-portfolio-cara](https://github.com/LeKoArts/gatsby-starter-portfolio-cara)
-- [gatsby-starter-minimal-blog](https://github.com/LeKoArts/gatsby-starter-minimal-blog)
+- [gatsby-starter-portfolio-emma](https://github.com/LekoArts/gatsby-starter-portfolio-emma)
+- [gatsby-starter-portfolio-emilia](https://github.com/LekoArts/gatsby-starter-portfolio-emilia)
+- [gatsby-starter-portfolio-bella](https://github.com/LekoArts/gatsby-starter-portfolio-bella)
+- [gatsby-starter-portfolio-cara](https://github.com/LekoArts/gatsby-starter-portfolio-cara)
+- [gatsby-starter-minimal-blog](https://github.com/LekoArts/gatsby-starter-minimal-blog)
 
 Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
 
@@ -61,8 +61,8 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
-```bash
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-prismic
+```shell
+gatsby new project-name https://github.com/LekoArts/gatsby-starter-prismic
 cd project-name
 ```
 
@@ -128,7 +128,7 @@ Before running the local development server you'll need to add Content to your P
 
 After that you can run the local server:
 
-```bash
+```shell
 npm run dev
 ```
 
@@ -138,7 +138,7 @@ You can add other features by having a look at the offical [plugins page](https:
 
 ### Building your site
 
-```
+```shell
 npm run build
 ```
 
