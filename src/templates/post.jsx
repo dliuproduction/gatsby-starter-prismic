@@ -99,6 +99,16 @@ export const pageQuery = graphql`
               }
             }
           }
+          ... on PrismicPostBodyQuote {
+            slice_type
+            id
+            primary {
+              quote {
+                html
+                text
+              }
+            }
+          }
           ... on PrismicPostBodyImage {
             slice_type
             id

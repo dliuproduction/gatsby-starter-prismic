@@ -19,6 +19,15 @@ const Content = styled.div`
       margin: 0.5rem 0;
     }
   }
+  blockquote {
+    margin-left: 0;
+    padding-left: 1.45rem;
+    border-left: 2px solid ${props => props.theme.colors.primary};
+    p {
+      font-size: 19px;
+      font-style: italic;
+    }
+  }
 `;
 
 export default class SliceZone extends Component {

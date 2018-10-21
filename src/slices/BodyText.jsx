@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 const Content = styled.div`
-  max-width: 720px;
+  max-width: ${props => props.theme.maxWidthText};
 `;
 
 const BodyText = ({ input }) => <Content dangerouslySetInnerHTML={{ __html: input.primary.text.html }} />;
