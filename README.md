@@ -52,7 +52,48 @@ Therefore the starter has following features:
   - Use the `website.js` to easily change the most important information
   - Themeable with `theme.js`
 
-## Getting Started
+## Instructions
+
+### Quick start guide
+
+The easiest way to deploy this starter is to use the same setup, meaning that your Prismic repository is configured the same way as this starter. The rest of this README aims to explain exactly that. You can read through the instructions with this high-level overview in mind:
+
+1. Clone and install the starter
+2. Register an account on Prismic
+3. Configure your custom types
+4. Create an API key and store it in an ENV variable
+5. Go to your content tab
+6. Create new documents for the `Homepage, Hero Links, Projects` type and fill out every input field
+7. Create at least one document for the `Category` type
+8. Create at least one document for the `Post` type. Every _Slice_ needs to be used at least one time! _Note: You could for example create one post with every slice in it._
+9. Your project is ready for development and production
+
+### Custom setup
+
+Changes to your Prismic repository imply the need to change the React/GraphQL code of this starter, e.g. if you change the names (and therefore API IDs) of custom types or their input fields, you'll need to change the corresponding GraphQL queries.
+
+#### Example: Use other slices
+
+Let's say you don't need to use the `Quote` slice. How would you get Gatsby to work without this slice?
+
+In this case the `Quote` slice gets queried in the `src/templates/post.jsx` file:
+
+```graphql
+... on PrismicPostBodyQuote {
+  slice_type
+  id
+  primary {
+    quote {
+      html
+      text
+    }
+  }
+}
+```
+
+Remove that bit from the query and Gatsby won't look for the Quote slice anymore (you also can remove the `src/slices/Quote.jsx` file). Vice versa you'd add a file in the `src/slices` directory, add it to `src/components/SliceZone.jsx`, and add it to the template query.
+
+## Install
 
 Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
 
@@ -70,11 +111,11 @@ cd project-name
 
 You have to know the basics of Prismic's interface in order to be able to make the necessary changes / setup your project accordingly. You can also checkout the document ["Sourcing from Prismic"](https://www.gatsbyjs.org/docs/sourcing-from-prismic/) I wrote for the official Gatsby documentation.
 
-### Content types
+### Custom types
 
-If you want to use the exact same custom types and only want to get up and running, follow these steps:
+To configure the exact same custom type as this starter, follow these steps:
 
-1. Setup an account on Prismic and go to your custom types
+1. Go to your custom types tab
 2. Click the button "Create New" and choose "Repeatable Type". Give it the name `Post` (the API ID should be `post` automatically)
 3. On the right side you have a sidebar with **Build mode** and **JSON editor**. Open the **JSON editor** tab and insert the data from `.prismic/post.json`. Save your type
 
@@ -87,7 +128,7 @@ Follow the second and third step (with the respective file from `.prismic`) for 
 | Homepage   | homepage   | Single     |
 | Projects   | projects   | Single     |
 
-These are the exact same content types I used for this starter.
+These are the exact same custom types I used for this starter.
 
 ### API key
 
@@ -124,7 +165,11 @@ The `Post` custom types offers four slices in the slice zone:
 
 ## Development
 
-Before running the local development server you'll need to add Content to your Prismic site! Go to your documents (`https://your-name.prismic.io/documents/`) and create content with the newly created types. Fill out the `Homepage`, `Hero Links`, and `Projects` single type. Create some categories and add at least one Post. **Please note**: You have to publish all these documents (not only saving them)!
+**Before running the local development server you'll need to add Content to your Prismic repository!**
+
+Go to your documents (`https://your-name.prismic.io/documents/`) and create content with the newly created types. Fill out the `Homepage`, `Hero Links`, and `Projects` single type. Create some categories and add at least one Post. This post needs to contain all available slices. If you create multiple posts make sure that every slice gets used at least one time.
+
+**Please note**: You have to publish all these documents (not only saving them)!
 
 After that you can run the local server:
 
