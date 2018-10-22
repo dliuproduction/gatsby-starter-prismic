@@ -66,8 +66,15 @@ Category.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query CategoryPage {
-    posts: allPrismicPost(sort: { fields: [data___date], order: DESC }) {
+  query CategoryPage($category: String!) {
+    posts: allPrismicPost(
+      sort: { fields: [data___date], order: DESC }
+      filter: {
+        data: {
+          categories: { elemMatch: { category: { document: { elemMatch: { data: { name: { eq: $category } } } } } } }
+        }
+      }
+    ) {
       totalCount
       edges {
         node {
